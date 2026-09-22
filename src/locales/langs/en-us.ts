@@ -299,7 +299,20 @@ const local: App.I18n.Schema = {
     exception_404: '404',
     exception_500: '500',
     tool: 'System Tools',
-    tool_gen: 'Code Generation'
+    tool_gen: 'Code Generation',
+    workflow: 'Workflow',
+    workflow_category: 'Workflow Category',
+    workflow_design: 'Process Design',
+    workflow_leave: 'Leave Application',
+    'workflow_process-definition': 'Process Definition',
+    'workflow_process-instance': 'Process Instance',
+    workflow_spel: 'Process Expression',
+    workflow_task: 'Tasks',
+    'workflow_task_all-task-waiting': 'All Pending Tasks',
+    'workflow_task_my-document': 'My Applications',
+    'workflow_task_task-copy': 'My Copies',
+    'workflow_task_task-finish': 'My Completed Tasks',
+    'workflow_task_task-waiting': 'My Pending Tasks'
   },
   menu: {
     system_log: 'Log Management',

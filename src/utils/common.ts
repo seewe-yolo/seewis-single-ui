@@ -1,3 +1,4 @@
+import { defineAsyncComponent, markRaw } from 'vue';
 import { AcceptType } from '@/enum/business';
 import { $t } from '@/locales';
 /**
@@ -74,6 +75,30 @@ export function humpToLine(str: string, line: string = '-') {
     temp = temp.slice(1);
   }
   return temp;
+}
+
+/** 动态加载工作流表单组件 */
+export async function loadDynamicComponent(
+  modules: Record<string, () => Promise<any>>,
+  formPath: string,
+  { delay = 2000, timeout = 3000 } = {}
+) {
+  const suffix = `${humpToLine(formPath)}.vue`;
+  const componentPath = suffix.replace('/workflow', '/workflow/form');
+  const matched = Object.entries(modules).find(([path]) => path.endsWith(componentPath));
+
+  if (!matched) {
+    window.$message?.error(`组件不存在: ${suffix}`);
+    throw new Error(`组件不存在: ${suffix}`);
+  }
+
+  return markRaw(
+    defineAsyncComponent({
+      loader: matched[1],
+      delay,
+      timeout
+    })
+  );
 }
 
 /** 判断是否为空 */

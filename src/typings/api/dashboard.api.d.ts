@@ -1,7 +1,7 @@
 /**
  * Namespace Api
  *
- * Dashboard and workflow api types
+ * Dashboard api types
  */
 declare namespace Api {
   namespace Dashboard {
@@ -25,23 +25,5 @@ declare namespace Api {
       trends: Trend[];
       userStatus: Distribution[];
     };
-  }
-
-  namespace Workflow {
-    type Task = {
-      id: CommonType.IdType;
-      flowName: string;
-      businessTitle: string;
-      nodeName: string;
-      flowStatus: string;
-      createByName: string;
-      createTime: string;
-    };
-
-    type TaskSearchParams = CommonType.RecordNullable<
-      Pick<Task, 'nodeName' | 'flowName' | 'flowStatus'> & Api.Common.CommonSearchParams
-    >;
-
-    type TaskList = Api.Common.PaginatingQueryRecord<Task>;
   }
 }

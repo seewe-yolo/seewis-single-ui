@@ -27,7 +27,6 @@ const taskSearchParams: Api.Workflow.TaskSearchParams = {
   pageSize: 5,
   nodeName: null,
   flowName: null,
-  flowStatus: null,
   params: {}
 };
 

@@ -33,8 +33,8 @@ UPDATE `sys_menu` SET `status` = '1' WHERE `menu_id` IN ( '116', '130', '131', '
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_dept`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (2000, 'route.dashboard', 0, 1, 'dashboard', 'Layout', '', 1, 0, 'M', '0', '0', '', 'mdi:view-dashboard-outline', 103, 1, sysdate(), null, null, '仪表盘目录') ON DUPLICATE KEY UPDATE `menu_name` = VALUES(`menu_name`), `component` = VALUES(`component`), `icon` = VALUES(`icon`), `update_time` = sysdate();
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_dept`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (2001, 'route.dashboard_workbench', 2000, 1, 'workbench', 'dashboard/workbench/index', '', 1, 0, 'C', '0', '0', 'dashboard:workbench', 'mdi:briefcase-outline', 103, 1, sysdate(), null, null, '工作台') ON DUPLICATE KEY UPDATE `menu_name` = VALUES(`menu_name`), `component` = VALUES(`component`), `perms` = VALUES(`perms`), `icon` = VALUES(`icon`), `update_time` = sysdate();
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_dept`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (2002, 'route.dashboard_analysis', 2000, 2, 'analysis', 'dashboard/analysis/index', '', 1, 0, 'C', '0', '0', 'dashboard:analysis', 'mdi:chart-line', 103, 1, sysdate(), null, null, '数据分析') ON DUPLICATE KEY UPDATE `menu_name` = VALUES(`menu_name`), `component` = VALUES(`component`), `perms` = VALUES(`perms`), `icon` = VALUES(`icon`), `update_time` = sysdate();
--- 工作流需要禁用的页面
-UPDATE `sys_menu` SET `status` = '1' WHERE `menu_id` IN ( '11616', '11618', '11638', '11700', '11701' );
+-- 开放工作流相关菜单
+UPDATE `sys_menu` SET `status` = '0', `visible` = '0' WHERE `menu_id` IN ( '11616', '11618', '11638', '11700', '11701' );
 
 -- 顶级菜单排序：仪表盘置顶，预留 1-20 给业务模块。
 UPDATE `sys_menu` SET `order_num` = 1 WHERE `menu_id` = 2000;
@@ -43,3 +43,34 @@ UPDATE `sys_menu` SET `order_num` = 22 WHERE `menu_id` = 2;
 UPDATE `sys_menu` SET `order_num` = 23 WHERE `menu_id` = 3;
 UPDATE `sys_menu` SET `order_num` = 24 WHERE `menu_id` = 11616;
 UPDATE `sys_menu` SET `order_num` = 25 WHERE `menu_id` = 11618;
+
+-- 工作流菜单组件适配
+UPDATE `sys_menu` SET `component` = 'Layout' WHERE `menu_id` IN (11616, 11618, 11630);
+UPDATE `sys_menu` SET `component` = 'workflow/task/taskWaiting/index' WHERE `menu_id` = 11619;
+UPDATE `sys_menu` SET `component` = 'workflow/task/myDocument/index' WHERE `menu_id` = 11629;
+UPDATE `sys_menu` SET `component` = 'workflow/task/allTaskWaiting/index' WHERE `menu_id` = 11631;
+UPDATE `sys_menu` SET `component` = 'workflow/task/taskFinish/index' WHERE `menu_id` = 11632;
+UPDATE `sys_menu` SET `path` = 'taskCopy', `component` = 'workflow/task/taskCopy/index' WHERE `menu_id` = 11633;
+UPDATE `sys_menu` SET `path` = 'design', `component` = 'workflow/design/index' WHERE `menu_id` = 11700;
+UPDATE `sys_menu` SET `component` = 'workflow/leave/index' WHERE `menu_id` = 11701;
+
+-- 工作流菜单图标适配
+UPDATE `sys_menu`
+SET `icon` = CASE `menu_id`
+    WHEN 11616 THEN 'local-icon-workflow'
+    WHEN 11618 THEN 'local-icon-my-task'
+    WHEN 11619 THEN 'local-icon-waiting'
+    WHEN 11632 THEN 'local-icon-finish'
+    WHEN 11633 THEN 'local-icon-my-copy'
+    WHEN 11620 THEN 'local-icon-process-definition'
+    WHEN 11621 THEN 'local-icon-tree-table'
+    WHEN 11622 THEN 'local-icon-category'
+    WHEN 11801 THEN 'local-icon-input'
+    WHEN 11629 THEN 'local-icon-guide'
+    WHEN 11630 THEN 'local-icon-monitor'
+    WHEN 11631 THEN 'local-icon-waiting'
+    WHEN 11638 THEN 'local-icon-form'
+    WHEN 11700 THEN 'local-icon-edit'
+    WHEN 11701 THEN 'local-icon-edit'
+END
+WHERE `menu_id` IN (11616, 11618, 11619, 11632, 11633, 11620, 11621, 11622, 11801, 11629, 11630, 11631, 11638, 11700, 11701);

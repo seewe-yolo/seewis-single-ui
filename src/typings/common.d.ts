@@ -43,4 +43,7 @@ declare namespace CommonType {
     /** filter function */
     filterFn?: (node: any) => boolean;
   };
+
+  /** the type of workflow table operate */
+  type WorkflowTableOperateType = 'add' | 'edit' | 'detail' | 'approval';
 }
