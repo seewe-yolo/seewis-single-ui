@@ -24,10 +24,6 @@ declare module "@elegant-router/types" {
     "403": "/403";
     "404": "/404";
     "500": "/500";
-    "about": "/about";
-    "demo": "/demo";
-    "demo_demo": "/demo/demo";
-    "demo_tree": "/demo/tree";
     "home": "/home";
     "iframe-page": "/iframe-page/:url";
     "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?";
@@ -48,8 +44,6 @@ declare module "@elegant-router/types" {
     "system_oss-config": "/system/oss-config";
     "system_post": "/system/post";
     "system_role": "/system/role";
-    "system_tenant": "/system/tenant";
-    "system_tenant-package": "/system/tenant-package";
     "system_user": "/system/user";
     "tool": "/tool";
     "tool_gen": "/tool/gen";
@@ -92,8 +86,6 @@ declare module "@elegant-router/types" {
     | "403"
     | "404"
     | "500"
-    | "about"
-    | "demo"
     | "home"
     | "iframe-page"
     | "login"
@@ -126,9 +118,6 @@ declare module "@elegant-router/types" {
     | "login"
     | "social-callback"
     | "user-center"
-    | "about"
-    | "demo_demo"
-    | "demo_tree"
     | "home"
     | "monitor_cache"
     | "monitor_logininfor"
@@ -144,8 +133,6 @@ declare module "@elegant-router/types" {
     | "system_oss"
     | "system_post"
     | "system_role"
-    | "system_tenant-package"
-    | "system_tenant"
     | "system_user"
     | "tool_gen"
   >;

@@ -32,7 +32,7 @@ const visible = defineModel<boolean>('visible', {
 });
 #if($tplCategory == 'tree')
 
-const treeList = ref<Api.Demo.Tree[]>([]);
+const treeList = ref<Api.$ModuleName.${BusinessName}[]>([]);
 #end
 
 const { formRef, validate, restoreValidation } = useNaiveForm();

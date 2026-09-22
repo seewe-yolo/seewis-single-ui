@@ -284,8 +284,6 @@ const local: App.I18n.Schema = {
     system_oss: 'File Management',
     'system_oss-config': 'OSS Config',
     system_client: 'Client Management',
-    system_tenant: 'Tenant Management',
-    'system_tenant-package': 'Tenant Package Management',
     monitor: 'Monitor',
     monitor_logininfor: 'Login Log',
     monitor_operlog: 'Operate Log',
@@ -293,19 +291,14 @@ const local: App.I18n.Schema = {
     monitor_online: 'Online User',
     'user-center': 'User Center',
     'social-callback': 'Social Callback',
-    demo: 'Demo',
-    demo_demo: 'Demo Table',
-    demo_tree: 'Demo Tree',
     exception: 'Exception',
     exception_403: '403',
     exception_404: '404',
     exception_500: '500',
     tool: 'System Tools',
-    tool_gen: 'Code Generation',
-    about: 'About'
+    tool_gen: 'Code Generation'
   },
   menu: {
-    system_tenant: 'Tenant Management',
     system_log: 'Log Management',
     'monitor_snail-job': 'Job Management',
     monitor_admin: 'Admin Monitor'
@@ -396,7 +389,7 @@ const local: App.I18n.Schema = {
   page: {
     login: {
       common: {
-        title: 'Modern enterprise-level multi-tenant management system',
+        title: 'Modern enterprise-level management system',
         subTitle: 'Provides developers with a complete enterprise management solution',
         loginOrRegister: 'Login / Register',
         register: 'Register',
@@ -1036,104 +1029,6 @@ const local: App.I18n.Schema = {
         selectDataScope: 'Select Data Scope',
         selectDeptPermission: 'Select Dept Permission'
       },
-      tenant: {
-        title: 'Tenant List',
-        tenantName: 'Tenant Name',
-        tenantId: 'Tenant ID',
-        contactUserName: 'Contact Person',
-        contactPhone: 'Contact Phone',
-        companyName: 'Company Name',
-        licenseNumber: 'License Number',
-        address: 'Address',
-        intro: 'Introduction',
-        domain: 'Domain',
-        packageId: 'Tenant Package',
-        expireTime: 'Expiration Time',
-        accountCount: 'Account Count',
-        status: 'Status',
-        createTime: 'Create Time',
-        form: {
-          tenantName: {
-            required: 'Please enter Tenant Name',
-            invalid: 'Tenant Name cannot be empty'
-          },
-          contactUserName: {
-            required: 'Please enter Contact Person',
-            invalid: 'Contact Person cannot be empty'
-          },
-          contactPhone: {
-            required: 'Please enter Contact Phone',
-            invalid: 'Contact Phone cannot be empty'
-          },
-          companyName: {
-            required: 'Please enter Company Name',
-            invalid: 'Company Name cannot be empty'
-          },
-          licenseNumber: {
-            required: 'Please enter License Number',
-            invalid: 'License Number cannot be empty'
-          },
-          address: {
-            required: 'Please enter Address',
-            invalid: 'Address cannot be empty'
-          },
-          intro: {
-            required: 'Please enter Introduction',
-            invalid: 'Introduction cannot be empty'
-          },
-          domain: {
-            required: 'Please enter Domain',
-            invalid: 'Domain cannot be empty'
-          },
-          packageId: {
-            required: 'Please select Tenant Package',
-            invalid: 'Tenant Package cannot be empty'
-          },
-          expireTime: {
-            required: 'Please select Expiration Time',
-            invalid: 'Expiration Time cannot be empty'
-          },
-          accountCount: {
-            required: 'Please enter Account Count',
-            invalid: 'Account Count cannot be empty'
-          },
-          status: {
-            required: 'Please select Status',
-            invalid: 'Status cannot be empty'
-          }
-        },
-        addTenant: 'Add Tenant',
-        editTenant: 'Edit Tenant'
-      },
-      tenantPackage: {
-        title: 'Tenant Package List',
-        packageName: 'Package Name',
-        menuIds: 'Menu Permission',
-        remark: 'Remark',
-        status: 'Status',
-        createTime: 'Create Time',
-        form: {
-          packageName: {
-            required: 'Please enter Package Name',
-            invalid: 'Package Name cannot be empty'
-          },
-          menuIds: {
-            required: 'Please select Menu Permission',
-            invalid: 'Menu Permission cannot be empty'
-          },
-          status: {
-            required: 'Please select Status',
-            invalid: 'Status cannot be empty'
-          },
-          remark: {
-            required: 'Please enter Remark',
-            invalid: 'Remark cannot be empty'
-          }
-        },
-        addTenantPackage: 'Add Tenant Package',
-        editTenantPackage: 'Edit Tenant Package',
-        statusChangeSuccess: 'Status modified successfully'
-      },
       user: {
         title: 'User List',
         userName: 'Username',
@@ -1208,20 +1103,6 @@ const local: App.I18n.Schema = {
         importSuccess: 'Import successful',
         statusChangeSuccess: 'Status modified successfully'
       }
-    },
-    about: {
-      title: 'About',
-      introduction: `RuoYi-Plus-Soybean is a modern, enterprise-level multi-tenant management system. It combines the powerful backend capabilities of RuoYi-Vue-Plus with the modern frontend features of Soybean Admin, providing developers with a complete enterprise management solution.`,
-      projectInfo: {
-        title: 'Project Info',
-        version: 'Version',
-        latestBuildTime: 'Latest Build Time',
-        documentLink: 'Document Link',
-        previewLink: 'Preview Link',
-        repositoryLink: 'Repository Link'
-      },
-      prdDep: 'Production Dependency',
-      devDep: 'Development Dependency'
     }
   },
   form: {

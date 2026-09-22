@@ -211,7 +211,7 @@ function handleRepeatSubmit(config: InternalAxiosRequestConfig) {
 
 function handleEncrypt(config: InternalAxiosRequestConfig) {
   // 是否需要加密
-  const isEncrypt = config.headers?.isEncrypt === 'true';
+  const isEncrypt = config.headers?.isEncrypt === true || config.headers?.isEncrypt === 'true';
 
   if (import.meta.env.VITE_APP_ENCRYPT === 'Y') {
     // 当开启参数加密

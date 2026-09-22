@@ -926,56 +926,6 @@ declare namespace App {
             selectDataScope: string;
             selectDeptPermission: string;
           };
-          tenant: {
-            title: string;
-            tenantName: string;
-            tenantId: string;
-            contactUserName: string;
-            contactPhone: string;
-            companyName: string;
-            licenseNumber: string;
-            address: string;
-            intro: string;
-            domain: string;
-            packageId: string;
-            expireTime: string;
-            accountCount: string;
-            status: string;
-            createTime: string;
-            form: {
-              tenantName: FormMsg;
-              contactUserName: FormMsg;
-              contactPhone: FormMsg;
-              companyName: FormMsg;
-              licenseNumber: FormMsg;
-              address: FormMsg;
-              intro: FormMsg;
-              domain: FormMsg;
-              packageId: FormMsg;
-              expireTime: FormMsg;
-              accountCount: FormMsg;
-              status: FormMsg;
-            };
-            addTenant: string;
-            editTenant: string;
-          };
-          tenantPackage: {
-            title: string;
-            packageName: string;
-            menuIds: string;
-            remark: string;
-            status: string;
-            createTime: string;
-            form: {
-              packageName: FormMsg;
-              menuIds: FormMsg;
-              status: FormMsg;
-              remark: FormMsg;
-            };
-            addTenantPackage: string;
-            editTenantPackage: string;
-            statusChangeSuccess: string;
-          };
           user: {
             title: string;
             userName: string;
@@ -1014,20 +964,6 @@ declare namespace App {
             importSuccess: string;
             statusChangeSuccess: string;
           };
-        };
-        about: {
-          title: string;
-          introduction: string;
-          projectInfo: {
-            title: string;
-            version: string;
-            latestBuildTime: string;
-            documentLink: string;
-            previewLink: string;
-            repositoryLink: string;
-          };
-          prdDep: string;
-          devDep: string;
         };
       };
       form: {
@@ -1122,16 +1058,6 @@ declare namespace App {
       data: T;
       rows?: any[];
       total?: number;
-    };
-
-    /** The demo backend service response data */
-    type DemoResponse<T = unknown> = {
-      /** The backend service response code */
-      status: string;
-      /** The backend service response message */
-      message: string;
-      /** The backend service response data */
-      result: T;
     };
   }
 }
