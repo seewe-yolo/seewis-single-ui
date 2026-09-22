@@ -38,8 +38,7 @@ const dynamicConstantRoutes: ElegantRoute[] = [
     meta: {
       title: 'home',
       i18nKey: 'route.home',
-      icon: 'mdi:monitor-dashboard',
-      order: -1
+      hideInMenu: true
     }
   },
   {

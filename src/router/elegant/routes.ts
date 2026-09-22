@@ -40,14 +40,45 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
+    name: 'dashboard',
+    path: '/dashboard',
+    component: 'layout.base',
+    meta: {
+      title: 'dashboard',
+      i18nKey: 'route.dashboard',
+      order: 0
+    },
+    children: [
+      {
+        name: 'dashboard_analysis',
+        path: '/dashboard/analysis',
+        component: 'view.dashboard_analysis',
+        meta: {
+          title: 'dashboard_analysis',
+          i18nKey: 'route.dashboard_analysis',
+          order: 2
+        }
+      },
+      {
+        name: 'dashboard_workbench',
+        path: '/dashboard/workbench',
+        component: 'view.dashboard_workbench',
+        meta: {
+          title: 'dashboard_workbench',
+          i18nKey: 'route.dashboard_workbench',
+          order: 1
+        }
+      }
+    ]
+  },
+  {
     name: 'home',
     path: '/home',
     component: 'layout.base$view.home',
     meta: {
       title: 'home',
       i18nKey: 'route.home',
-      icon: 'mdi:monitor-dashboard',
-      order: 1
+      hideInMenu: true
     }
   },
   {
@@ -81,7 +112,8 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.base',
     meta: {
       title: 'monitor',
-      i18nKey: 'route.monitor'
+      i18nKey: 'route.monitor',
+      order: 22
     },
     children: [
       {
@@ -141,7 +173,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'system',
       i18nKey: 'route.system',
       localIcon: 'menu-system',
-      order: 1
+      order: 21
     },
     children: [
       {
@@ -258,7 +290,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'tool',
       i18nKey: 'route.tool',
       localIcon: 'menu-tool',
-      order: 4
+      order: 23
     },
     children: [
       {

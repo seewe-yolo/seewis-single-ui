@@ -619,6 +619,41 @@ declare namespace App {
           };
           creativity: string;
         };
+        dashboard: {
+          greeting: string;
+          todoCount: string;
+          userCount: string;
+          deptCount: string;
+          noticeCount: string;
+          operationCount: string;
+          todoTitle: string;
+          noticeTitle: string;
+          viewAll: string;
+          viewAnalysis: string;
+          viewNotice: string;
+          refresh: string;
+          emptyTodo: string;
+          emptyNotice: string;
+          todoUnavailable: string;
+          todoUnavailableDesc: string;
+          partialLoad: string;
+          partialLoadDesc: string;
+          analysisTitle: string;
+          analysisDesc: string;
+          dateRange: string;
+          last7Days: string;
+          last30Days: string;
+          trendTitle: string;
+          userStatus: string;
+          normal: string;
+          disabled: string;
+          date: string;
+          detailTitle: string;
+          loadFailed: string;
+          loadFailedDesc: string;
+          notice: string;
+          announcement: string;
+        };
         system: {
           client: {
             title: string;
